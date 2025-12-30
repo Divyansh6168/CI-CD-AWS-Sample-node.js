@@ -1,22 +1,24 @@
 {
   "name": "my-nodejs-app",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "node app.js",
-    "test": "mocha"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "main": "app.js",
   "description": "",
+  "license": "ISC",
+  "scripts": {
+    "dev": "node app.js",
+    "test": "mocha",
+    "start": "pm2 start app.js --name my-nodejs-app",
+    "restart": "pm2 restart my-nodejs-app",
+    "stop": "pm2 stop my-nodejs-app",
+    "logs": "pm2 logs my-nodejs-app"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
   "devDependencies": {
     "chai": "^6.2.2",
     "chai-http": "^5.1.2",
     "mocha": "^11.7.5",
     "supertest": "^7.1.4"
-  },
-  "dependencies": {
-    "express": "^5.2.1"
   }
 }
