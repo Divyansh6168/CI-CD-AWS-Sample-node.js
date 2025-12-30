@@ -11,6 +11,11 @@
   "description": "",
   "devDependencies": {
     "chai": "^6.2.2",
-    "mocha": "^11.7.5"
+    "chai-http": "^5.1.2",
+    "mocha": "^11.7.5",
+    "supertest": "^7.1.4"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
   }
 }
