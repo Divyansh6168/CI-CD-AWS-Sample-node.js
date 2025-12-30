@@ -1,0 +1,28 @@
+name: "Deploy to AWS"
+
+#Trigger the workflow from the github actions ui
+on: workflow_dispatch
+
+jobs: 
+    deploy:
+        runs-on: self-hosted
+        steps:
+            - name: "Setup nodejs"
+              uses: actions/setup-node@v4
+              with: 
+                 node-version: "22"
+
+            - name: "Checkout Code"
+              uses: actions/checkout@v2
+
+            - name: "Install Dependencies"
+              run: npm install
+
+            - name: "Install chai mocha globally"
+              run: npm install mocha chai --save-dev
+
+            - name: "Run the Tests"
+              run: npm test
+
+            - name: "Deploy to AWS"
+              run: start app.js
