@@ -28,6 +28,5 @@ jobs:
 
       - name: "Deploy with PM2"
         run: |
-          pm2 stop my-nodejs-app || true
-          pm2 start app.js --name my-nodejs-app
+          pm2 restart my-nodejs-app || pm2 start app.js --name my-nodejs-app
           pm2 save
