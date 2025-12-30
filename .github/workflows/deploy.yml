@@ -22,13 +22,9 @@ jobs:
       - name: "Run Tests"
         run: npm test
 
-      - name: "Install PM2 if not exists"
+      - name: "Install PM2"
         run: |
-          if ! command -v pm2 &> /dev/null
-          then
-            echo "PM2 not found, installing..."
-            sudo npm install -g pm2
-          fi
+          sudo env "PATH=$PATH" npm install -g pm2
 
       - name: "Deploy with PM2"
         run: |
