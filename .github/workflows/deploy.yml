@@ -25,4 +25,4 @@ jobs:
               run: npm test
 
             - name: "Deploy to AWS"
-              run: start app.js
+              run: npm start app.js
