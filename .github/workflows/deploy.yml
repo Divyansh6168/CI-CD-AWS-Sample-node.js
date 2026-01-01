@@ -23,4 +23,4 @@ jobs:
         run: npm test
 
       - name: "Deployment Step"
-        run: echo "Deployment completed successfully. No server to start."
+        run: pm2 start app.js --name my-nodejs-app
