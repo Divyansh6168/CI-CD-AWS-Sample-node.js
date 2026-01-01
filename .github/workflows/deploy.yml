@@ -23,4 +23,6 @@ jobs:
         run: npm test
 
       - name: "Deployment Step"
-        run: pm2 start app.js --name my-nodejs-app
+        run: |
+          pm2 start app.js --name my-nodejs-app
+          pm2 save
